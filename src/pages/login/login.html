@@ -1,0 +1,32 @@
+<!-- <ion-header app-header></ion-header> -->
+<ion-content padding>
+  <ion-card class="auth-form">
+    <ion-card-header>
+      <ion-card-title>
+        Login
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content [formGroup]="loginForm">
+      <ion-list>
+        <ion-item>
+          <ion-label color="primary" floating>E-mail</ion-label>
+          <ion-input formControlName="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" floating>Password</ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <button ion-button large block (click)="login()" [disabled]="loginForm.invalid || loginFormButtonDisabled">
+            {{ !loginFormButtonDisabled ? 'Login' : null }}
+            <ion-spinner color="light" *ngIf="loginFormButtonDisabled"></ion-spinner>
+          </button>
+        </ion-item>
+        <ion-item text-center *ngIf="resendVerification">
+          <p>Your email is {{loginForm.controls['email'].value}}</p>
+          <p><button ion-button (click)="resendVerificationMail()" clear style="vertical-align: middle;">Resend</button> verification mail</p>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

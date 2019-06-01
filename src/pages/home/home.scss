@@ -1,0 +1,14 @@
+page-home {
+  .home-page {
+    display: flex;
+    flex-direction: row;
+
+    @media screen and (max-width: $break-medium) {
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+
+
+

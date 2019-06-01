@@ -1,0 +1,13 @@
+page-login {
+  ion-spinner * {
+    width: 28px;
+    height: 28px;
+    stroke: rgb(230, 228, 228);
+    fill: rgb(255, 255, 255);
+  }
+  .auth-form {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

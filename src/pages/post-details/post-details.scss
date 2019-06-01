@@ -1,0 +1,17 @@
+page-post-details {
+    .col{
+        padding:0px;
+    }
+    .input-cover{
+        border:1px solid #5f142b;
+    }
+    [col-2]{
+        max-height: 42px;
+        .button-md{
+            margin:0px;
+            border-radius: 0px;
+          height: 42px;
+          width: 55px;
+        }
+    }
+}

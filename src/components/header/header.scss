@@ -1,0 +1,9 @@
+.header[app-header] {
+  ion-toolbar {
+    &.header-menu {
+      .toolbar-background {
+        background: #ffffff;
+      }
+    }
+  }
+}

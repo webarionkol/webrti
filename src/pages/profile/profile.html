@@ -1,0 +1,44 @@
+<ion-toolbar color="dark" *ngIf="!authCurrentUser?.emailVerified">
+  <p ion-text color="light">Your email is not verified yet! <a (click)="verifyEmail()">click here</a> verify your email: <strong>{{user.email}}</strong></p>
+</ion-toolbar>
+<ion-content class="transparent-header">
+  <div id="profile-bg" [ngStyle]="{'background-image': user?.coverImage ? 'url('+postProvider.encodeURL(user.coverImage)+')':'url(assets/imgs/background/background-4.jpg)'}"></div>
+  <div id="content">
+    <div id="profile-info" padding>
+      <img id="profile-image" [src]="user?.photoURL ? postProvider.encodeURL(user?.photoURL) : placeholderPicture">
+      <h3 id="profile-name">{{user?.displayName}}</h3>
+      <p>{{user?.occupation}} &bull; {{user?.location?.name}}, {{user?.location?.state}}</p>
+      <blockquote class="profile-description">
+        {{user?.description ? user?.description : 'About author'}}
+      </blockquote>
+      <button ion-button small outline color="primary" (click)="follow()" *ngIf="afAuth?.auth?.currentUser?.uid !== user?.uid">Follow</button>
+      <button ion-button small outline color="primary" (click)="gotoPage('profile-settings', {
+        user: user
+      })" *ngIf="afAuth?.auth?.currentUser?.uid === user?.uid">Edit Profile</button>
+      <button ion-button *ngIf="following" class="follow-button" small color="purple" (click)="follow()">Following<ion-icon name="checkmark"></ion-icon></button>
+    </div>
+    <ion-row class="profile-numbers">
+      <ion-col col-4>
+        <p>Followers</p>
+        <span>{{user?.followers}}</span>
+      </ion-col>
+      <ion-col col-4>
+        <p>Following</p>
+        <span>{{user?.following}}</span>
+      </ion-col>
+      <ion-col col-4>
+        <p>Posts</p>
+        <span>{{posts.length}}</span>
+      </ion-col>
+    </ion-row>
+    <div id="posts">
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngFor="let post of posts" col-12 col-sm-3 col-md-4 col-lg-4 col-xl-3>
+            <post-card [post]="post" [hideImage]="true"></post-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>

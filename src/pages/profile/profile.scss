@@ -1,0 +1,103 @@
+page-profile {
+  ion-content.content {
+    background: #fff;
+  }
+  button,
+  ion-button,
+  .button-md,
+  .button-ios {
+    text-transform: none !important;
+  }
+  p {
+    color: #444;
+  }
+  ion-row.profile-numbers.row {
+    background: #fafafa;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+    border-top: 1px solid #f1f1f1;
+    border-bottom: 1px solid #e9e9e9;
+  }
+  // Cover image
+  #profile-bg {
+    // position: absolute;
+    left: 0;
+    width: 100%;
+    margin-top: -16px;
+    height: 250px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+  }
+  // Profile content
+  #content {
+    position: relative;
+    margin-top: -130px;
+    text-align: center;
+  }
+  #profile-image {
+    display: block;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 0;
+    object-fit: cover;
+    background: #fff;
+    border: 5px solid #fff;
+    box-shadow: -2px 0 4px 0 rgba(0,0,0,0.3) inset, rgba(142, 136, 146, 0.75) 0px 7px 12px -3px;
+  }
+  #profile-info {
+    top: -95px;
+    width: 100%;
+    z-index: 2;
+    text-align: center;
+  }
+  #profile-name {
+    color: #444;
+    font-size: 26px;
+  }
+  .profile-description {
+    font-size: 14px;
+    color: #707070;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: .2px;
+    line-height: 1.3;
+  }
+  .follow-button {
+    text-transform: none;
+    border-radius: 3px !important;
+    ion-icon {
+      font-weight: bold;
+      padding-left: 5px;
+      font-size: 2.5rem;
+    }
+  }
+  // Following, Followers and all..
+  .profile-numbers {
+    p {
+      color: #444;
+      font-size: medium;
+      margin-bottom: 3px;
+    }
+    span {
+      font-weight: bold;
+      font-size: 2.4rem;
+      color: #34354c;
+      display: inline-block;
+      margin: 10px 0;
+    }
+  }
+  hr {
+    border: 0;
+    height: 1px;
+    background: #444;
+    background: -webkit-linear-gradient(left, hsla(0, 0%, 0%, 0) 0%, rgb(188, 198, 214) 50%, hsla(0, 0%, 0%, 0) 100%);
+  }
+  // Posts feed
+  #posts {
+    text-align: justify;
+    background: linear-gradient(0deg, #f8f8f8 100%, white 80%, white 0%);
+  }
+}

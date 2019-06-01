@@ -1,0 +1,82 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+ion-content.content {
+  background-color: #f6f6f6;
+}
+
+// .toast-container{ background:rgb(230, 71, 71); }
+// .toast-md .toast-message{ color: rgb(255, 255, 255); }
+
+// .toolbar-ios {
+//   ion-title {
+//     padding: 0 135px 1px 10px;
+//     .toolbar-title-ios {
+//       text-align: left;
+//     }
+//   }
+// }
+
+.post-view {
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow: visible;
+    word-break: break-all;
+    white-space: normal;
+    margin-bottom: 1rem;
+  }
+  blockquote {
+    font-style: italic;
+  }
+  table {
+    margin: 0;
+    padding: .5rem;
+    border-collapse: collapse;
+  }
+  code, pre {
+   font-size: 1rem;
+  }
+  pre {
+   font-size: 0.8rem;
+   padding: 1rem;
+   background: #eee;
+  }
+  li {
+   padding-bottom: .3rem;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .25rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+  h4, h5, h6 {
+    font-size: 0.9rem;
+  }
+  p {
+    margin: 0 0 .5rem 0;
+  }
+  br {
+    line-height: 0.6rem;
+  }
+}
+

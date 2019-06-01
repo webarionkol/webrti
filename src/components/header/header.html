@@ -1,0 +1,36 @@
+<ion-toolbar color="primary">
+  <ion-title (click)="gotoPage((loggedIn && user.role === 'ADMIN') ? 'admin-posts':'home')">Web RTI</ion-title>
+  <ion-buttons end *ngIf="!loggedIn">
+    <button ion-button outline color="light" (click)="gotoPage('register')">
+      Register
+    </button>
+    <button ion-button color="secondary" (click)="gotoPage('login')">
+      Login
+    </button>
+  </ion-buttons>
+  <ion-buttons end *ngIf="loggedIn">
+    <button ion-button icon-only *ngIf="user && user.role !== 'ADMIN'" (click)="gotoPage('search')">
+      <ion-icon name="search"></ion-icon>
+    </button>
+    <button ion-button icon-only *ngIf="user && user.role !== 'ADMIN'">
+      <ion-icon name="notifications"></ion-icon>
+    </button>
+    <button ion-button icon-only (click)="userPopover($event)">
+      <ion-icon name="settings"></ion-icon>
+    </button>
+  </ion-buttons>
+
+
+</ion-toolbar>
+<!-- <ion-toolbar color="light" *ngIf="loggedIn" class="header-menu">
+  <ion-buttons *ngIf="user && user.role === 'USER'">
+    <button ion-button (click)="gotoPostPage('CITY')">My City Posts</button>
+    <button ion-button (click)="gotoPostPage('FOLLOWER')">Followers Posts</button>
+    <button ion-button (click)="gotoPostPage('MY')">My Posts</button>
+    <button ion-button (click)="gotoPage('add-post')">Add New Post</button>
+  </ion-buttons>
+  <ion-buttons *ngIf="user && user.role === 'ADMIN'">
+    <button ion-button (click)="gotoPage('admin-posts')">All Posts</button>
+    <button ion-button (click)="gotoPage('admin-users')">All Users</button>
+  </ion-buttons>
+</ion-toolbar> -->

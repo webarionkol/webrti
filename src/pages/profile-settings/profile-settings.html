@@ -1,0 +1,42 @@
+<ion-content [formGroup]="profileForm">
+  <div id="profile-bg" [ngStyle]="{'background-image': user?.coverImage ? 'url('+postProvider.encodeURL(user.coverImage)+')':'url(assets/imgs/background/background-4.jpg)'}"></div>
+  <div id="content">
+    <ion-list>
+      <ion-list-header class="avatar-box">
+        <ion-avatar item-start (click)="clickInputImage('profile-image-upload')">
+          <input type="file" accept="image/*" id="profile-image-upload" style="display: none;" (change)="updateImage($event, 'avatar')">
+          <img [src]="user?.photoURL ? postProvider.encodeURL(user?.photoURL) : placeholderPicture">
+        </ion-avatar>
+        <p class="username">{{user?.displayName}}</p>
+        <p class="email">{{user?.email}}</p>
+        <button item-end ion-button outline icon-start class="upload-cover-button" (click)="clickInputImage('cover-image-upload')">
+          <ion-icon name="cloud-upload"></ion-icon> Upload Cover Photo
+          <input type="file" accept="image/*" id="cover-image-upload" style="display: none;" (change)="updateImage($event, 'cover')">
+        </button>
+      </ion-list-header>
+    </ion-list>
+    <ion-list no-border>
+      <ion-item>
+        <ion-icon name="body" item-start></ion-icon>
+        <ion-label>Gender</ion-label>
+        <ion-select formControlName="gender">
+          <ion-option *ngFor="let gender of genders" [value]="gender">{{gender}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="briefcase" item-start></ion-icon>
+        <ion-label>Occupation</ion-label>
+        <ion-input formControlName="occupation"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="person" item-start></ion-icon>
+        <ion-label>About me</ion-label>
+        <ion-textarea formControlName="description" rows="8"></ion-textarea>
+      </ion-item>
+    </ion-list>
+    <div style="text-align: center; margin-bottom: 15px;">
+      <button ion-button outline (click)="saveProfile()">save profile</button>
+    </div>
+  </div>
+
+</ion-content>

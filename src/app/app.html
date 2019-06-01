@@ -1,0 +1,24 @@
+
+<ion-header app-header></ion-header>
+<ion-content no-bounce>
+    <ion-nav [root]="root" ion-fixed></ion-nav>
+</ion-content>
+
+<!-- <ion-content no-bounce>
+  <ion-split-pane>
+    <ion-menu [content]="someContent" id="adminMenu" *ngIf="user && user.role === 'ADMIN'">
+      <ion-content>
+        <ion-list>
+          <ion-item>
+            <ion-avatar item-left>
+              <img src="https://source.unsplash.com/category/nature/100x100">
+            </ion-avatar>
+            <h2>Nature</h2>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-nav [root]="root" #someContent main></ion-nav>
+  </ion-split-pane>
+  <ion-nav [root]="root" ion-fixed  *ngIf="!user && user.role !== 'ADMIN'"></ion-nav>
+</ion-content> -->

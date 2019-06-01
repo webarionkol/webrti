@@ -1,0 +1,54 @@
+<!--
+  Generated template for the PostDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content padding *ngIf="post">
+  <ion-card *ngIf="post">
+    <img [src]="post.displayImage" style="max-height: 250px; object-fit: cover; object-position: center;" />
+    <ion-row class="card-footer">
+      <ion-col *ngIf="post.authorId !== authProvider.currentUserUID">
+        <button ion-button icon-start clear small [disabled]="post.authorId === authProvider.currentUserUID" (click)="likePost()">
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>{{likes.length}} Likes</div>
+        </button>
+      </ion-col>
+      <ion-col align-self-center nowrap *ngIf="!post.adminApproved && post.authorId === authProvider.currentUserUID">
+        <span>
+          Not Approved
+        </span>
+      </ion-col>
+      <ion-col align-self-center text-right nowrap>
+        <span>
+          {{moment(post.createdAt).fromNow()}}
+        </span>
+      </ion-col>
+    </ion-row>
+    <hr>
+    <ion-card-content>
+      <ion-card-title>{{post.title}}</ion-card-title>
+      <div [innerHTML]="post.content" class="post-content"></div>
+    </ion-card-content>
+  </ion-card>
+  <ion-list>
+    <ion-item *ngFor="let item of commentarre">
+      <ion-avatar item-start>
+        <img src="data:image/png;base64,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">
+      </ion-avatar>
+      <h2>{{item.name}}</h2>
+      <p text-wrap>{{item.comment}}</p>
+    </ion-item>
+  </ion-list>
+  <ion-row>
+    <ion-col col-10>
+      <ion-input type="text" placeholder="Enter Comment" [(ngModel)]="inputText"></ion-input>
+    </ion-col>
+    <ion-col col-2>
+      <button ion-button icon-only (click)="click()">
+        <ion-icon name="ios-send"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+  
+</ion-content>

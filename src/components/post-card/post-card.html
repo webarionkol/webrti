@@ -1,0 +1,26 @@
+<ion-card>
+  <img *ngIf="!hideImage" [src]="post.displayImage" (click)="nav.gotoPage('post-details', navParams)" />
+  <ion-card-content>
+    <ion-card-title (click)="nav.gotoPage('post-details', navParams)" *ngIf="!hideHeading" [ngStyle]="{'font-size': config && config.headingFontSize ? config.headingFontSize : null}">{{post.title.length
+      > 60 ? (post.title.substring(0, 60)+'...') : post.title}}</ion-card-title>
+    <div *ngIf="!hideContent" [innerHTML]="post.content" class="post-content"></div>
+  </ion-card-content>
+  <ion-row class="card-footer" *ngIf="!hideFooter">
+    <ion-col *ngIf="post.authorId !== authProvider.currentUserUID">
+      <button ion-button icon-start clear small [disabled]="post.authorId === authProvider.currentUserUID" (click)="likePost()">
+        <ion-icon name="thumbs-up"></ion-icon>
+        <div>{{likes.length}} Likes</div>
+      </button>
+    </ion-col>
+    <ion-col align-self-center nowrap *ngIf="post.authorId === authProvider.currentUserUID">
+      <ion-note>
+        {{ post.adminApproved ? 'Approved':'Pending'}}
+      </ion-note>
+    </ion-col>
+    <ion-col align-self-center text-right nowrap>
+      <ion-note>
+        {{moment(post.createdAt).fromNow()}}
+      </ion-note>
+    </ion-col>
+  </ion-row>
+</ion-card>

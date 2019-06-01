@@ -1,0 +1,21 @@
+page-admin-posts {
+  .post-title {
+    font-size: 1.7rem;
+    margin-bottom: 1.2rem;
+  }
+  .post-content {
+    max-height: 100px;
+    overflow: hidden;
+    @extend .post-view;
+  }
+  .right-box {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid #ddd;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+  }
+}

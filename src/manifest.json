@@ -1,0 +1,13 @@
+{
+  "name": "Web RTI",
+  "short_name": "WebRTI",
+  "start_url": "index.html",
+  "display": "standalone",
+  "icons": [{
+    "src": "assets/imgs/logo.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "background_color": "#c97624",
+  "theme_color": "#c97624"
+}

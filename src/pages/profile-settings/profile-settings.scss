@@ -1,0 +1,43 @@
+page-profile-settings {
+ #profile-bg {
+    height: 250px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  #content {
+    padding-top: 138px;
+    ion-list-header {
+      &.avatar-box {
+        background: transparent;
+        border: none;
+        ion-avatar {
+          cursor: pointer;
+          img {
+            width: 80px;
+            height: 80px;
+          }
+        }
+      }
+    }
+
+  }
+  .username {
+    font-size: 2.2em;
+    color: #fff;
+    font-weight: 300;
+  }
+  .email {
+    font-size: 1.1em;
+    font-weight: 300;
+    color: #fff;
+  }
+  .label {
+    color: #7f7f7f;
+  }
+}
+

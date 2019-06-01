@@ -1,0 +1,8 @@
+page-post-add {
+  ckeditor {
+    .ck-editor__editable {
+      min-height: 300px !important;
+      @extend .post-view;
+    }
+  }
+}

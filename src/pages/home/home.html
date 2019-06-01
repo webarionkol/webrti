@@ -1,0 +1,38 @@
+<ion-content>
+  <div class="home-page">
+    <ion-grid style="flex: 3.5">
+      <ion-row>
+        <ion-col *ngFor="let post of posts" col-12 col-xs-6 col-sm-6 col-md-4 col-lg-4 col-xl-4>
+          <post-card [post]="post"></post-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid style="flex: 1; background: #ededed;border-left: 1px solid #ddd;">
+      <ion-title *ngIf="posts && posts.length">
+        <h3>Trending post</h3>
+      </ion-title>
+      <ion-row>
+        <ion-col *ngFor="let post of posts | slice:0:2;" col-6 col-sm-6 col-md-12 col-lg-12 col-xl-12>
+          <post-card [post]="post" [hideContent]="true" [hideFooter]="true" [config]="{headingFontSize: '1.8rem'}"></post-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <ion-fab bottom right #fab>
+    <button ion-fab (click)="share()"><ion-icon name="md-share"></ion-icon></button>
+    <!-- <ion-fab-list side="top">
+      <button ion-fab (click)="share('facebook', fab)">Facebook</button>
+      <button ion-fab (click)="share('twitter', fab)">Twitter</button>
+    </ion-fab-list> -->
+  </ion-fab>
+
+
+  <ion-fab bottom left #fab>
+    <button ion-fab><ion-icon name="call"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button ion-fab (click)="tandc()">T & C</button>
+      <button ion-fab (click)="pricy()"><ion-icon name="ios-document"></ion-icon></button>
+      <button ion-fab (click)="call()"><ion-icon name="ios-call-outline"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>
